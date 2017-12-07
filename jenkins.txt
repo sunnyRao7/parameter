@@ -1,8 +1,13 @@
 pipeline{
 agent {
-    node {
-        label 'my-defined-label'
-        echo 'hello world' 
+    node('ubuntu_node') {
+       stages{
+             stage('building'){
+	     	steps{
+        	echo 'hello world'
+		}
+	     }
+      }
     }
 }
 }
