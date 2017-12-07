@@ -20,7 +20,7 @@ pipeline {
 
  	stage("deploying") {
 	     steps {
-	            echo "${buildType}"
+	            echo "this build is running in ${choice.buildType}"
             }
 	}
 
