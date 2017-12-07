@@ -14,7 +14,7 @@ pipeline {
 	
 	stage("testing"){
 	     steps {
-	          echo " This will be ${params.DEBUG_BUILD} if build runs"
+	          echo " This will be ${params.DEBUG_BUILD} build runs"
               }
 	 }
 
