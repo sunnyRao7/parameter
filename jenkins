@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Nikhil Rao', description: 'Who should I say hello to?')
+	booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '')
+	choice(choices: ['debug', 'release', 'dev'],description: '', name: 'buildType')])
+    }
+    stages {
+        stage('building') {
+            steps {
+                echo "Hello ${params.PERSON}"
+            }
+        }
+	
+	stage("testing"){
+	     steps {
+	          echo " This will be ${params.DEBUG_BUILD} if build runs"
+              }
+	 }
+
+	 stage("deploying") {
+	      steps {
+	            echo "build type is : ${buildType}"
+		    }
+          }
+
+    }
+}
